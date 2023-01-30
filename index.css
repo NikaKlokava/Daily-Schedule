@@ -8,8 +8,8 @@ html {
 
 body {
   display: grid;
-  grid-template-rows: 1fr 12fr 1fr;
-  height: 100vh;
+  grid-template-rows: 2fr 5fr 1fr;
+  /* height: 100vh; */
   margin: 0px auto;
   background-image: url(assets/img/bridge_between_buildings_and_godowns_hd_dark_aesthetic-1920x1080.jpg);
 }
@@ -36,7 +36,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.268)
+  background-color: rgba(255, 255, 255, 0.268);
 }
 
 p {
@@ -73,6 +73,7 @@ ul {
   color: white;
   cursor: pointer;
 }
+
 .header-navbar ul>li:hover {
   text-shadow: 0px 2px 5px white;
   transition: 0.3s;
@@ -87,23 +88,149 @@ ul {
   padding: 10px;
 }
 
-.three {
-  grid-row: 1/3;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.471);
+/************************************************************************************/
 
-}
-
-.four {
+.list-to-do {
+  grid-row: 1/4;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.471);
 }
 
-.five {
+.to-do-header {
+  font-family: Aboreto, sans-serif;
+  font-size: 28px;
+  border-bottom: 1px dotted black;
+  color: #0a0708bb;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #0a070878;
+  margin-bottom: 20px;
+}
+
+.header-container .time-name,
+.header-container .activity-name,
+.header-container .progress-name {
+  font-family: Explora, sans-serif;
+  font-size: 40px;
+  color: black;
+}
+
+/*******/
+.content-container {
+  display: grid;
+  grid-template-columns: 2fr 8fr 3fr;
+  column-gap: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #0a0708d2;
+  background-color: rgba(255, 255, 255, 0.471);
+
+}
+
+.content-container>* {
+  font-family: Aboreto, sans-serif;
+  font-size: 20px;
+  color: #0a0708d2;
+}
+
+.content-container .time-duration,
+.content-container .activity-name {
+  border-right: 1px solid black;
+}
+
+.content-container .progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-status {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.change-status {
+  width: 20px;
+  height: 20px;
+  background-image: url(assets/svg/three-dots.svg);
+  cursor: pointer;
+}
+.time-status {
+  min-width: 45px;
+}
+
+.delete {
+  width: 27px;
+  height: 27px;
+  background-size: 27px 27px;
+  background-image: url(assets/svg/delete.svg);
+  cursor: pointer;
+}
+
+/*******/
+.priorities-header,
+.goals-header {
+  align-self: center;
+  font-family: Aboreto, sans-serif;
+  font-size: 28px;
+  color: #0a0708bb;
+  border-bottom: 1px solid #0a070878;
+}
+
+/*******/
+.time-content {
+  display: flex;
+  column-gap: 20px;
+  align-items: start;
+  height: fit-content;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.471);
 }
 
+.time-content>* {
+  font-family: Aboreto, sans-serif;
+  font-size: 28px;
+  color: #0a0708bb;
+}
+
+.time-header {
+  padding-right: 20px;
+  border-right: 1px solid #0a0708bb;
+}
+
+.priorities {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.471);
+}
+
+.goals {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.471);
+}
+
+.goals-header {
+  margin-bottom: 20px;
+}
+
+.add-goals {
+  align-self: center;
+  width: 50px;
+  height: 50px;
+  background-image: url(assets/svg/add.svg);
+  background-color: rgba(255, 255, 255, 0.471);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/************************************************************************************/
 .nine ul {
   display: flex;
   justify-content: space-around;
