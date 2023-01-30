@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 12fr 1fr;
+  height: 100vh;
+  margin: 0px auto;
+  background-image: url(assets/img/bridge_between_buildings_and_godowns_hd_dark_aesthetic-1920x1080.jpg);
+}
+
+/************************************************************************************/
+header,
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+header {
+  background-color: #0a070878;
+  padding: 30px;
+}
+
+main {
+  padding: 50px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.268)
+}
+
+p {
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+
+/************************************************************************************/
+.one {
+  grid-row: 1/3;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.67);
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.67);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.two {
+  display: flex;
+  column-gap: 20px;
+  width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.67);
+}
+
+.three {
+  grid-row: 1/3;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.471);
+
+}
+
+.four {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.471);
+}
+
+.five {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.471);
+}
+
+.nine ul {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 10px;
+}
