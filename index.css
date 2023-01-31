@@ -48,6 +48,9 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
 
 /************************************************************************************/
 .header-name {
@@ -160,6 +163,7 @@ ul {
   background-image: url(assets/svg/three-dots.svg);
   cursor: pointer;
 }
+
 .time-status {
   min-width: 45px;
 }
@@ -235,4 +239,115 @@ ul {
   display: flex;
   justify-content: space-around;
   column-gap: 10px;
+}
+
+.nine a {
+  color: black;
+}
+
+@media screen and (max-width:768px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .header-name {
+    font-size: 80px;
+  }
+
+  .header-date-now {
+    column-gap: 10px;
+    font-size: 18px;
+  }
+
+  .to-do-header,
+  .time-content>*,
+  .priorities-header,
+  .goals-header {
+    font-size: 20px;
+  }
+
+  .header-container .time-name,
+  .header-container .activity-name,
+  .header-container .progress-name {
+    font-size: 30px;
+  }
+
+  .content-container>* {
+    font-size: 16px;
+  }
+
+  .list-to-do {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+
+  .time-content {
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (max-width:555px) {
+  main {
+    padding: 30px;
+    gap: 15px;
+  }
+
+  .to-do-header,
+  .time-content>*,
+  .priorities-header,
+  .goals-header {
+    font-size: 18px;
+  }
+
+  .header-container .time-name,
+  .header-container .activity-name,
+  .header-container .progress-name {
+    font-size: 24px;
+  }
+
+  .content-container>* {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:430px) {
+  header {
+    gap: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .header-name {
+    font-size: 50px;
+  }
+
+  .header-date-now {
+    font-size: 16px;
+  }
+
+  .header-container,
+  .content-container {
+    margin-bottom: 10px;
+  }
+
+  .to-do-header,
+  .time-content>*,
+  .priorities-header,
+  .goals-header {
+    font-size: 16px;
+  }
+
+  .content-container>* {
+    font-size: 10px;
+  }
+
+  .priorities,
+  .goals {
+    grid-column: 1/3;
+  }
+
 }
