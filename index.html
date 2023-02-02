@@ -7,14 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="assets/css/header.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/footer.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
-  <script src="index.js"></script>
+  <script src="assets/js/date-time.js"></script>
+  <script src="assets/js/buttons.js"></script>
   <title>Daily planner</title>
 </head>
 
 <body>
   <header>
-    <div class="header-name">
+    <div class="header-title">
       <p>Daily Planner</p>
     </div>
     <div class="header-navbar">
@@ -30,22 +34,16 @@
     </div>
   </header>
   <main>
-    <section class="list-to-do">
-      <p class="to-do-header">To do</p>
-      <div class="header-container">
-        <div class="time-name">
-          <p>Time</p>
-        </div>
-        <div class="activity-name">
-          <p>Activity</p>
-        </div>
-        <div class="progress-name">
-          <p>Progress</p>
-        </div>
+    <section class="list-tasks">
+      <p class="list-tasks-title">To do</p>
+      <div class="titles-container">
+        <p class="time-title">Time</p>
+        <p class="activity-title">Activity</p>
+        <p class="progress-title">Progress</p>
       </div>
       <div class="content-container">
         <p class="time-duration">9:30 - 10:00</p>
-        <p class="activity-name">Wake up, and go for a walk</p>
+        <p class="task-name">Wake up, and go for a walk</p>
         <div class="progress">
           <div class="progress-status"></div>
           <div class="change-status"></div>
@@ -53,27 +51,99 @@
           <div class="delete"></div>
         </div>
       </div>
-      <div class="content-container">
-        <p class="time-duration">9:30 - 10:00</p>
-        <p class="activity-name">Wake up, and go for a walk.</p>
-        <div class="progress">
-          <div class="progress-status"></div>
-          <div class="change-status"></div>
-          <div class="time-status"></div>
+      <div class="modal-container">
+        <div class="modal-title-container">
+          <p class="modal-title">Add new task</p>
           <div class="delete"></div>
         </div>
+        <div class="task-name-container">
+          <div class="icon-task"></div>
+          <p class="task-name-title">Task name</p>
+        </div>
+        <input class="task-name-input" type="text" placeholder="[Enter task name]">
+        <div class="select-time-container">
+          <div class="icon-time"></div>
+          <p class="select-time-title">Select time start</p>
+        </div>
+        <div class="time-container">
+          <input id="hours" type="text" class="time-start-input" placeholder="[hours]" readonly>
+          <div class="icon-two-dots"></div>
+          <input id="mins" type="text" class="time-start-input" placeholder="[mins]" readonly>
+          <div class="hours-container">
+            <p class="hours-item">00</p>
+            <p class="hours-item">01</p>
+            <p class="hours-item">02</p>
+            <p class="hours-item">03</p>
+            <p class="hours-item">04</p>
+            <p class="hours-item">05</p>
+            <p class="hours-item">06</p>
+            <p class="hours-item">07</p>
+            <p class="hours-item">08</p>
+            <p class="hours-item">09</p>
+            <p class="hours-item">10</p>
+            <p class="hours-item">11</p>
+            <p class="hours-item">12</p>
+            <p class="hours-item">13</p>
+            <p class="hours-item">14</p>
+            <p class="hours-item">15</p>
+            <p class="hours-item">16</p>
+            <p class="hours-item">17</p>
+            <p class="hours-item">18</p>
+            <p class="hours-item">19</p>
+            <p class="hours-item">20</p>
+            <p class="hours-item">21</p>
+            <p class="hours-item">22</p>
+            <p class="hours-item">23</p>
+          </div>
+          <div class="mins-container">
+            <p class="mins-item">00</p>
+            <p class="mins-item">05</p>
+            <p class="mins-item">10</p>
+            <p class="mins-item">15</p>
+            <p class="mins-item">20</p>
+            <p class="mins-item">25</p>
+            <p class="mins-item">30</p>
+            <p class="mins-item">35</p>
+            <p class="mins-item">40</p>
+            <p class="mins-item">45</p>
+            <p class="mins-item">50</p>
+            <p class="mins-item">55</p>
+          </div>
+        </div>
+        <div class="duration-time-container">
+          <div class="icon-time-duration"></div>
+          <p class="duration-time-title">Select time duration</p>
+        </div>
+        <div class="duration-wrapper">
+          <div class="duration-container">
+            <p class="min-item">00</p>
+            <p class="min-item">05</p>
+            <p class="min-item">10</p>
+            <p class="min-item">15</p>
+            <p class="min-item">20</p>
+            <p class="min-item">25</p>
+            <p class="min-item">30</p>
+            <p class="min-item">35</p>
+            <p class="min-item">40</p>
+            <p class="min-item">45</p>
+            <p class="min-item">50</p>
+            <p class="min-item">55</p>
+          </div>
+        </div>
+        <button class="confirm-changes">Confirm</button>
       </div>
+      <div id="icon-add-task" class="icon-add-task"></div>
     </section>
     <section class="time-content">
       <p class="time-header">Time now</p>
       <p id="time" class="time-now"></p>
     </section>
-    <section class="priorities">
+    <section class="top-priorities">
       <p class="priorities-header">Top Priorities</p>
     </section>
     <section class="goals">
       <p class="goals-header">Goals</p>
-      <div class="add-goals"></div>
+      <div class="icon-add-goals"></div>
     </section>
   </main>
   <footer>
