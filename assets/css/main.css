@@ -82,15 +82,16 @@ main {
 /******************************************************************************************/
 .modal-container {
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
   row-gap: 10px;
   width: 300px;
-  height: 350px;
+  height: 400px;
   top: 0;
   right: 0;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.943);
+  transition: 0.3s ease-in-out;
 }
 
 .modal-title-container {
@@ -180,11 +181,14 @@ main {
 /**********************/
 .hours-container,
 .mins-container {
+  display: none;
+}
+
+.hours-container.active,
+.mins-container.active {
   z-index: 2;
   position: absolute;
-  display: none;
-  /******     !!!!!!!    ****/
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.843);
@@ -220,16 +224,18 @@ main {
 
 /**********************/
 .duration-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 40px;
-  background-color: rgba(53, 53, 53, 0.553);
-  border-radius: 10px;
+  row-gap: 10px;
 }
 
 .duration-container {
   display: flex;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: space-around;
+  height: 40px;
+  background-color: rgba(53, 53, 53, 0.553);
+  border-radius: 10px;
 }
 
 .min-item {
@@ -245,6 +251,29 @@ main {
   transition: 0.3s ease-in-out;
 }
 
+.min-item.active {
+  background-color: rgba(255, 255, 255, 0.675);
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.675);
+  border-radius: 3px;
+}
+
+.own-duration {
+  display: flex;
+  column-gap: 10px;
+}
+
+.own-duration-title {
+  align-self: center;
+  font-size: 10px;
+  font-family: Aboreto, sans-serif;
+}
+
+.own-duration-input {
+  width: 30%;
+  font-family: Explora, sans-serif;
+  font-size: 20px;
+}
+
 .confirm-changes {
   align-self: center;
   width: 30%;
@@ -254,6 +283,7 @@ main {
   border-radius: 10px;
   cursor: pointer;
 }
+
 .confirm-changes:hover {
   color: rgba(0, 0, 0, 0.708);
   box-shadow: 0px 1px 5px rgba(53, 53, 53, 0.553);
