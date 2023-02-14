@@ -78,7 +78,7 @@ function handlerHoursEndInputClick(input) {
   const hoursEndContainer = document.getElementById("hours-end-container");
 
   if (!hourTimeStart || !minTimeStart) {
-    showErrorTimeSelecting();
+    showErrorOfTimeSelecting();
   } else {
     hoursEndContainer.classList.toggle("active");
   }
@@ -91,7 +91,7 @@ function handlerHoursEndInputClick(input) {
 function handlerMinsEndInputClick(input) {
   const minsEndContainer = document.getElementById("mins-end-container");
   if (!hourTimeStart || !minTimeStart) {
-    showErrorTimeSelecting();
+    showErrorOfTimeSelecting();
   } else {
     minsEndContainer.classList.toggle("active");
   }
@@ -135,7 +135,7 @@ function handlerTimeDurationItemClick(event) {
       timeDuration = event.target.innerHTML;
 
       if (!hourTimeStart || !minTimeStart) {
-        showErrorTimeSelecting();
+        showErrorOfTimeSelecting();
       } else {
         hourTimeEnd = parseInt(hourTimeStart);
         hoursEndInputEl.value = hourTimeEnd;
@@ -151,12 +151,12 @@ function handlerTimeDurationItemClick(event) {
         }
 
         if (hourTimeEnd < 10) {
-          hourTimeEnd = "0" + hourTimeEnd
+          hourTimeEnd = "0" + hourTimeEnd;
           hoursEndInputEl.value = hourTimeEnd;
         }
 
         if (minTimeEnd < 10) {
-          minTimeEnd = "0" + minTimeEnd
+          minTimeEnd = "0" + minTimeEnd;
           minsEndInputEl.value = minTimeEnd;
         }
       }
@@ -213,10 +213,11 @@ function resetEnteredData() {
 }
 
 // error
-function showErrorTimeSelecting() {
+function showErrorOfTimeSelecting() {
   const errElem = document.querySelector(".error");
   setTimeout(() => {
     errElem.classList.add("active");
+    errElem.innerHTML = "Enter time start!";
   }, 0);
   setTimeout(() => {
     errElem.classList.remove("active");
@@ -227,7 +228,7 @@ function showErrorOfConfirmChanges() {
   const errElem = document.querySelector(".error");
   setTimeout(() => {
     errElem.classList.add("active");
-    errElem.innerHTML = "Enter all fields";
+    errElem.innerHTML = "Enter all fields!";
   }, 0);
   setTimeout(() => {
     errElem.classList.remove("active");
@@ -236,6 +237,7 @@ function showErrorOfConfirmChanges() {
 
 //confirm changes
 function confirmChanges() {
+  console.log(localStorage);
   const prevBlock = document.querySelector(".modal-container");
   if (
     !taskName ||
