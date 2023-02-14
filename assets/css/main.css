@@ -55,8 +55,8 @@ main {
 /******************************************************************************************/
 .content-container {
   display: grid;
-  grid-template-columns: 2fr 8fr 3fr;
-  column-gap: 20px;
+  grid-template-columns: 1fr 3fr 1fr;
+  /* column-gap: 20px; */
   margin-bottom: 20px;
   border-bottom: 1px solid #0a0708d2;
   background-color: rgba(255, 255, 255, 0.471);
@@ -68,32 +68,36 @@ main {
   color: #0a0708d2;
 }
 
-.content-container .time-duration,
+.content-container .task-duration,
 .content-container .task-name {
   border-right: 1px solid black;
+  padding: 10px;
 }
 
 .content-container .progress {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 /******************************************************************************************/
 .modal-container {
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
   row-gap: 10px;
   width: 300px;
-  height: 350px;
+  height: max-content;
   top: 0;
   right: 0;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.943);
+  transition: 0.3s ease-in-out;
 }
 
-.modal-title-container {
+.modal-title-wrapper {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px dotted #0a0708d2;
@@ -106,9 +110,10 @@ main {
   color: #0a0708d2;
 }
 
-.task-name-container,
-.select-time-container,
-.duration-time-container {
+.task-name-wrapper,
+.select-time-start-wrapper,
+.duration-time-wrapper,
+.select-time-end-wrapper {
   display: flex;
   height: max-content;
   column-gap: 5px;
@@ -116,6 +121,7 @@ main {
 
 .icon-task,
 .icon-time,
+.icon-time-end,
 .icon-time-duration {
   width: 30px;
   height: 30px;
@@ -129,13 +135,18 @@ main {
   background-image: url(../svg/time.svg);
 }
 
+.icon-time-end {
+  background-image: url(../svg/time_end.svg);
+}
+
 .icon-time-duration {
   background-image: url(../svg/timer.svg);
 }
 
 .task-name-title,
-.select-time-title,
-.duration-time-title {
+.select-time-start-title,
+.duration-time-title,
+.select-time-end-title {
   align-self: center;
   font-family: Aboreto, sans-serif;
   font-size: 20px;
@@ -151,7 +162,8 @@ main {
 }
 
 /**********************/
-.time-container {
+.time-start-container,
+.time-end-container {
   position: relative;
   display: flex;
 }
@@ -180,11 +192,14 @@ main {
 /**********************/
 .hours-container,
 .mins-container {
+  display: none;
+}
+
+.hours-container.active,
+.mins-container.active {
   z-index: 2;
   position: absolute;
-  display: none;
-  /******     !!!!!!!    ****/
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.843);
@@ -203,15 +218,19 @@ main {
   left: 67px;
 }
 
-.hours-item,
-.mins-item {
+.hour-start-item,
+.min-start-item,
+.hour-end-item,
+.min-end-item {
   color: white;
   font-family: Aboreto, sans-serif;
   cursor: pointer;
 }
 
-.hours-item:hover,
-.mins-item:hover {
+.hour-start-item:hover,
+.min-start-item:hover,
+.hour-end-item:hover,
+.min-end-item:hover {
   color: black;
   background-color: white;
   border-radius: 15%;
@@ -219,17 +238,19 @@ main {
 }
 
 /**********************/
-.duration-wrapper {
+.duration-container-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 40px;
-  background-color: rgba(53, 53, 53, 0.553);
-  border-radius: 10px;
+  row-gap: 10px;
 }
 
 .duration-container {
   display: flex;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: space-around;
+  height: 40px;
+  background-color: rgba(53, 53, 53, 0.553);
+  border-radius: 10px;
 }
 
 .min-item {
@@ -245,6 +266,12 @@ main {
   transition: 0.3s ease-in-out;
 }
 
+.min-item.active {
+  background-color: rgba(255, 255, 255, 0.675);
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.675);
+  border-radius: 3px;
+}
+
 .confirm-changes {
   align-self: center;
   width: 30%;
@@ -254,6 +281,7 @@ main {
   border-radius: 10px;
   cursor: pointer;
 }
+
 .confirm-changes:hover {
   color: rgba(0, 0, 0, 0.708);
   box-shadow: 0px 1px 5px rgba(53, 53, 53, 0.553);
@@ -346,6 +374,23 @@ main {
 .icon-add-goals:hover {
   background-color: rgba(255, 255, 255, 0.675);
   transition: 0.3s;
+}
+
+.error {
+  position: absolute;
+  top: 313px;
+  width: 95%;
+  font-family: Aboreto, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  opacity: 0;
+  border: 1px solid rgba(255, 0, 0, 0.357);
+  background-color: white;
+}
+.error.active {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
 }
 
 /******************************************************************************************/
