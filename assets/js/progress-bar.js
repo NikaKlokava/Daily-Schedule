@@ -12,7 +12,6 @@ function updateProgressBarElements() {
   const moveToTopButtonElems = document.getElementsByClassName("move-to-top");
   for (let elem of moveToTopButtonElems) {
     elem.onclick = () => {
-      console.log("here 1");
       handlerMoveToTopButtonClick(elem);
     };
   }
@@ -39,7 +38,6 @@ function handlerDoneButtonClick(elem) {
 }
 
 function handlerMoveToTopButtonClick(elem) {
-  console.log("here 2");
   const topPriorytiesEl = document.getElementById("top-priorities");
   const contentContainerEl = elem.closest(".content-container");
   topPriorytiesEl.after(contentContainerEl);
@@ -47,14 +45,12 @@ function handlerMoveToTopButtonClick(elem) {
   const returnButtonElems = document.getElementsByClassName("return");
   for (let elem of returnButtonElems) {
     elem.onclick = () => {
-      console.log("here 3");
       handlerReturnButtonClick(elem);
     };
   }
 }
 
 function handlerReturnButtonClick(elem) {
-  console.log("here 4");
   const modalContainerEl = document.getElementById("modal-container");
   const contentContainerEl = elem.closest(".content-container");
   modalContainerEl.before(contentContainerEl);
