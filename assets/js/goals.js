@@ -4,7 +4,7 @@ function handlerAddGoalsIconClick(prevBlock) {
   divGoalContainer.insertAdjacentHTML(
     "afterbegin",
     `<div class="goal-icon"></div>
-         <input class="goal-name" type="text" placeholder="[enter goals name]">
+         <input class="goal-name" type="text" spellcheck="false" placeholder="[enter goals name]">
          <div class="delete-goal"></div>`
   );
   prevBlock.before(divGoalContainer);

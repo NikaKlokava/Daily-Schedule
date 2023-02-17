@@ -37,7 +37,6 @@
   font-size: 20px;
   padding: 10px;
   border-right: 1px solid black;
-  /* min-width: 120px; */
 }
 
 .done:hover:hover,
@@ -61,7 +60,7 @@
 }
 
 .start-now.active:hover {
-  transform: rotateZ(-0.1turn);
+  transform: rotateY(3.142rad);
   transition: 0.3s ease-in-out;
 }
 

@@ -20,7 +20,7 @@
   .content-container>*,
   .top-priorities .content-container>*,
   .goal-name {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .list-tasks {
@@ -68,7 +68,7 @@
   }
 
   .content-container>* {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -107,9 +107,9 @@
     border-bottom: 1px dotted black;
   }
 
-  .content-container>* {
+  /* .content-container>* {
     font-size: 10px;
-  }
+  } */
 
   .timer-start-now {
     min-width: 70px;
