@@ -21,7 +21,7 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.67);
 }
 
-.header-navbar ul>li {
+.header-navbar ul>li>a {
   font-family: Explora, sans-serif;
   font-size: 28px;
   color: white;
