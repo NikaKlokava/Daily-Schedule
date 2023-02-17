@@ -248,7 +248,7 @@ function confirmChanges() {
     showErrorOfConfirmChanges();
   } else {
     setTimeout(() => {
-      let divContentContainer = document.createElement("div");
+      const divContentContainer = document.createElement("div");
       divContentContainer.className = "content-container";
       prevBlock.before(divContentContainer);
       divContentContainer.insertAdjacentHTML(

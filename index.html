@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <link href="assets/css/header.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/footer.css" rel="stylesheet">
@@ -14,6 +14,7 @@
   <script src="assets/js/date-time.js"></script>
   <script src="assets/js/buttons.js"></script>
   <script src="assets/js/progress-bar.js"></script>
+  <script src="assets/js/goals.js"></script>
   <title>Daily planner</title>
 </head>
 
@@ -24,9 +25,9 @@
     </div>
     <div class="header-navbar">
       <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
+        <li><a href="#list-tasks">To do</a></li>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#goals">Goals</a></li>
       </ul>
     </div>
     <div class="header-date-now">
@@ -41,17 +42,6 @@
         <p class="time-title">Time</p>
         <p class="activity-title">Activity</p>
         <p class="progress-title">Progress</p>
-      </div>
-      <div class="content-container">
-        <p class="task-duration">9:30 - 10:00</p>
-        <p class="task-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti.</p>
-        <div class="progress-bar">
-          <div class="done" title="done"></div>
-          <div class="move-to-top" title="move to top"></div>
-          <div class="return" title="return"></div>
-          <div class="start-now" title="start now!"></div>
-          <div class="delete-task" title="delete"></div>
-        </div>
       </div>
       <div id="modal-container" class="modal-container">
         <div class="modal-title-wrapper">
@@ -283,12 +273,12 @@
       <p class="time-header">Time now</p>
       <p id="time" class="time-now"></p>
     </section>
-    <section class="top-priorities">
+    <section id="top" class="top-priorities">
       <p class="priorities-header" id="top-priorities">Top Priorities</p>
     </section>
-    <section class="goals">
+    <section id="goals" class="goals">
       <p class="goals-header">Goals</p>
-      <div class="icon-add-goals"></div>
+      <div id="icon-add-goals" class="icon-add-goals"></div>
     </section>
   </main>
   <footer>

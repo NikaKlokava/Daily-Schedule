@@ -127,10 +127,10 @@ function timer(elem) {
     } else if (minutesEl.innerHTML > 59) {
       minutesEl.innerHTML = min - 59;
       hoursEl.innerHTML = hour + 1;
-    }
 
-    if (hoursEl.innerHTML < 10) {
-      hoursEl.innerHTML = "0" + hoursEl.innerHTML;
+      if (hoursEl.innerHTML < 10) {
+        hoursEl.innerHTML = "0" + hoursEl.innerHTML;
+      }
     }
 
     if (secondsEl.innerHTML === "0") {
