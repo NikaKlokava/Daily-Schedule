@@ -237,7 +237,6 @@ function showErrorOfConfirmChanges() {
 
 //confirm changes
 function confirmChanges() {
-  console.log(localStorage);
   const prevBlock = document.querySelector(".modal-container");
   if (
     !taskName ||
@@ -252,20 +251,23 @@ function confirmChanges() {
       let divContentContainer = document.createElement("div");
       divContentContainer.className = "content-container";
       prevBlock.before(divContentContainer);
-      console.log({ hourTimeStart, minTimeStart, hourTimeEnd, minTimeEnd });
       divContentContainer.insertAdjacentHTML(
         "afterbegin",
         `<p class="task-duration">${hourTimeStart}:${minTimeStart} - ${hourTimeEnd}:${minTimeEnd}</p>
          <p class="task-name">${taskName}</p>
-         <div class="progress">
-          <div class="progress-status"></div>
-          <div class="change-status"></div>
-          <div class="time-status"></div>
-          <div class="delete"></div>
+         <div class="progress-bar">
+          <div class="done" title="done"></div>
+          <div class="move-to-top" title="move to top"></div>
+          <div class="return" title="return"></div>
+          <div class="start-now" title="start now!"></div>
+          <div class="delete-task" title="delete"></div>
         </div>`
       );
       handlerIconCloseTaskClick();
     }, 500);
+    setTimeout(() => {
+      updateProgressBarElements();
+    }, 800); // file progress-bar.js
   }
 }
 
