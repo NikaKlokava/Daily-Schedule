@@ -1,5 +1,4 @@
 header {
-  grid-template-columns: 1fr 1fr;
   background-color: #0a070878;
   padding: 30px;
 }
@@ -42,25 +41,31 @@ header {
   padding: 10px;
 }
 
-
 /************************************************/
 
 @media screen and (max-width:768px) {
+  header {
+    padding: 10px;
+  }
+
   .header-title {
-    font-size: 80px;
+    font-size: 60px;
+    border-right: none;
+  }
+
+  .header-navbar {
+    width: 70%;
+    justify-self: center;
   }
 
   .header-date-now {
     column-gap: 10px;
     font-size: 18px;
+    justify-self: center;
   }
 }
 
 @media screen and (max-width:430px) {
-  header {
-    gap: 10px;
-  }
-
   .header-title {
     font-size: 50px;
   }
