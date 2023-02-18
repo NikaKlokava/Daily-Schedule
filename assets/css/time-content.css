@@ -1,0 +1,23 @@
+.time-content {
+  display: flex;
+  column-gap: 20px;
+  align-items: start;
+  height: fit-content;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.471);
+}
+
+.time-content>* {
+  font-family: Aboreto, sans-serif;
+  font-size: 28px;
+  color: #0a0708bb;
+}
+
+.time-header {
+  padding-right: 20px;
+  border-right: 1px solid #0a0708bb;
+}
+
+#time {
+  min-width: 110px;
+}

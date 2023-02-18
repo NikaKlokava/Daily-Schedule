@@ -1,0 +1,79 @@
+.move-to-top {
+  width: 20px;
+  height: 20px;
+}
+
+.done {
+  width: 28px;
+  height: 28px;
+  background-image: url(../svg/done.svg);
+}
+
+.done:hover {
+  background-image: url(../svg/done-active.svg);
+}
+
+.done.active {
+  background-image: url(../svg/done-active.svg);
+  transition: 0.3s ease-in-out;
+}
+
+.move-to-top {
+  background-image: url(../svg/top-priority.svg);
+}
+
+.return {
+  display: none;
+}
+
+.start-now {
+  width: 30px;
+  height: 30px;
+  background-image: url(../svg/start-now.svg);
+  transition: 0.5s ease-in-out;
+}
+
+.timer-start-now {
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid black;
+}
+
+.done:hover:hover,
+.move-to-top:hover,
+.start-now:hover {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.move-to-top:hover {
+  background-image: url(../svg/top-priority-orange.svg);
+}
+
+.start-now:hover {
+  background-image: url(../svg/start-now-pink.svg);
+}
+
+.start-now.active {
+  transition: 0.5s ease-in-out;
+  background-image: url(../svg/stop.svg);
+}
+
+.start-now.active:hover {
+  transition: 0.3s ease-in-out;
+}
+
+.delete,
+.delete-task {
+  width: 27px;
+  height: 27px;
+  background-size: 27px 27px;
+  background-image: url(../svg/delete.svg);
+  cursor: pointer;
+}
+
+.delete:hover,
+.delete-task:hover {
+  background-image: url(../svg/delete-active.svg);
+  transition: 0.4s ease-in-out;
+}

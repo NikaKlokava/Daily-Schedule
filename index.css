@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  /* grid-template-rows: 2fr 5fr 1fr; */
+  grid-template-rows: fit-content fit-content fit-content;
+  min-height: 100vh;
+  margin: 0px auto;
+  background-image: url(assets/img/bridge_between_buildings_and_godowns_hd_dark_aesthetic-1920x1080.jpg);
+}
+
+/************************************************************************************/
+header,
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+p {
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: 0;
+}

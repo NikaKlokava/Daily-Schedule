@@ -1,0 +1,124 @@
+@media screen and (max-width:768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .list-tasks-title,
+  .time-content>*,
+  .priorities-header,
+  .goals-header {
+    font-size: 20px;
+  }
+
+  .titles-container .time-title,
+  .titles-container .activity-title,
+  .titles-container .progress-title {
+    font-size: 25px;
+  }
+
+  .content-container>*,
+  .top-priorities .content-container>*,
+  .goal-name {
+    font-size: 14px;
+  }
+
+  .list-tasks {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+
+  .time-content {
+    grid-column: 1/3;
+  }
+
+  .goals {
+    row-gap: 5px;
+  }
+}
+
+@media screen and (max-width:655px) {
+  main {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .top-priorities,
+  .goals {
+    grid-column: 1/3;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+
+@media screen and (max-width:555px) {
+
+  .list-tasks-title,
+  .time-content>*,
+  .priorities-header,
+  .goals-header {
+    font-size: 18px;
+  }
+
+  .titles-container .time-title,
+  .titles-container .activity-title,
+  .titles-container .progress-title {
+    font-size: 24px;
+  }
+
+  .content-container>* {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:430px) {
+  main {
+    padding: 20px;
+  }
+
+  .icon-add-task {
+    width: 40px;
+    height: 40px;
+  }
+
+  .titles-container,
+  .content-container {
+    margin-bottom: 10px;
+  }
+
+  .list-tasks-title,
+  .time-content>*,
+  .priorities-header,
+  .goals-header {
+    font-size: 16px;
+  }
+
+  .content-container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .content-container .task-duration,
+  .timer-start-now {
+    text-align: center;
+    grid-column: 1/3;
+    border-right: none;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted black;
+  }
+
+  /* .content-container>* {
+    font-size: 10px;
+  } */
+
+  .timer-start-now {
+    min-width: 70px;
+  }
+
+  .top-priorities,
+  .goals {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}
