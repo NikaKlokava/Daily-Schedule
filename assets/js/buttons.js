@@ -52,7 +52,7 @@ function handlerMinsStartInputClick(input) {
   resetEndTimeInputValues();
   resetTimeDuration();
 }
-function handlerHourStartItemClick(event) {
+function handlerHourStartItemClick() {
   const hoursStartInputEl = document.getElementById("hours-start-input");
   hoursStartInputEl.value = event.target.innerHTML;
   hourTimeStart = hoursStartInputEl.value;
@@ -62,7 +62,7 @@ function handlerHourStartItemClick(event) {
     hoursStartContainer.classList.toggle("active");
   }
 }
-function handlerMinStartItemClick(event) {
+function handlerMinStartItemClick() {
   const minsStartInputEl = document.getElementById("mins-start-input");
   minsStartInputEl.value = event.target.innerHTML;
   minTimeStart = minsStartInputEl.value;
@@ -102,7 +102,7 @@ function handlerMinsEndInputClick(input) {
   }
   resetTimeDuration();
 }
-function handlerHourEndItemClick(event) {
+function handlerHourEndItemClick() {
   const hoursEndInputEl = document.getElementById("hours-end-input");
   hoursEndInputEl.value = event.target.innerHTML;
   hourTimeEnd = hoursEndInputEl.value;
@@ -112,7 +112,7 @@ function handlerHourEndItemClick(event) {
     hoursEndContainer.classList.toggle("active");
   }
 }
-function handlerMinEndItemClick(event) {
+function handlerMinEndItemClick() {
   const minsEndInputEl = document.getElementById("mins-end-input");
   minsEndInputEl.value = event.target.innerHTML;
   minTimeEnd = minsEndInputEl.value;
@@ -124,7 +124,7 @@ function handlerMinEndItemClick(event) {
 }
 
 // choose duration
-function handlerTimeDurationItemClick(event) {
+function handlerTimeDurationItemClick() {
   const timeDurationItems = document.getElementsByClassName("min-item");
   const hoursEndInputEl = document.getElementById("hours-end-input");
   const minsEndInputEl = document.getElementById("mins-end-input");
@@ -164,9 +164,6 @@ function handlerTimeDurationItemClick(event) {
       item.classList.remove("active");
     }
 
-    // if (event.target === item && !item.classList.contains("active")) {
-    //   timeDuration = 0;
-    // }
   }
 }
 
@@ -293,17 +290,17 @@ function onDOMContentLoaded() {
 
   const hourStartItemEls = document.getElementsByClassName("hour-start-item");
   for (let item of hourStartItemEls) {
-    item.onclick = () => handlerHourStartItemClick(event);
+    item.onclick = handlerHourStartItemClick;
   }
   const minStartItemEls = document.getElementsByClassName("min-start-item");
   for (let item of minStartItemEls) {
-    item.onclick = () => handlerMinStartItemClick(event);
+    item.onclick = handlerMinStartItemClick;
   }
 
   // choose time duration
   const timeDurationEls = document.getElementsByClassName("min-item");
   for (let item of timeDurationEls) {
-    item.onclick = () => handlerTimeDurationItemClick(event);
+    item.onclick = handlerTimeDurationItemClick;
   }
 
   // select hours / mins END
@@ -315,11 +312,11 @@ function onDOMContentLoaded() {
 
   const hourEndItemEls = document.getElementsByClassName("hour-end-item");
   for (let item of hourEndItemEls) {
-    item.onclick = () => handlerHourEndItemClick(event);
+    item.onclick =  handlerHourEndItemClick;
   }
   const minEndItemEls = document.getElementsByClassName("min-end-item");
   for (let item of minEndItemEls) {
-    item.onclick = () => handlerMinEndItemClick(event);
+    item.onclick =  handlerMinEndItemClick;
   }
 
   // confirm changes

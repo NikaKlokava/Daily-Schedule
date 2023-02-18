@@ -11,9 +11,7 @@ function handlerAddGoalsIconClick(prevBlock) {
 
   const goalIconElems = document.getElementsByClassName("goal-icon");
   for (let elem of goalIconElems) {
-    elem.onclick = () => {
-      handlerGoalIconClick(elem);
-    };
+    elem.onclick = handlerGoalIconClick.bind(elem);
   }
 
   const deleteGoalIconElems = document.getElementsByClassName("delete-goal");
@@ -24,8 +22,8 @@ function handlerAddGoalsIconClick(prevBlock) {
   }
 }
 
-function handlerGoalIconClick(elem) {
-  const goalContainerEl = elem.closest(".goal-container");
+function handlerGoalIconClick() {
+  const goalContainerEl = this.closest(".goal-container");
   goalContainerEl.classList.toggle("active");
 }
 
