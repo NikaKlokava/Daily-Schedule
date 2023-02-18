@@ -31,8 +31,6 @@ function handlerGoalIconClick(elem) {
 
 function handlerDeleteGoalIconClick(elem) {
   const goalContainerEl = elem.closest(".goal-container");
-  console.log("here");
-  console.log({ goalContainerEl });
   goalContainerEl.remove();
 }
 
