@@ -15,11 +15,15 @@ function updateProgressBarElements() {
       handlerMoveToTopButtonClick(elem);
     };
   }
-
+  const el = document.get;
   const startNowButtonElems = document.getElementsByClassName("start-now");
   for (let elem of startNowButtonElems) {
     elem.onclick = () => {
-      handlerStartNowButtonClick(elem);
+      if (!elem.classList.contains("active")) {
+        handlerStartNowButtonClick(elem);
+      } else {
+        handlerStopTimerTask(elem);
+      }
     };
   }
 
@@ -79,10 +83,6 @@ function handlerStartNowButtonClick(startNowButton) {
   setInterval(() => {
     timer(contentContainerEl);
   }, 900);
-
-  startNowButton.onclick = () => {
-    handlerStopTimerTask(startNowButton);
-  };
 }
 
 function handlerStopTimerTask(elem) {

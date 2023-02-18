@@ -60,7 +60,6 @@
 }
 
 .start-now.active:hover {
-  transform: rotateY(3.142rad);
   transition: 0.3s ease-in-out;
 }
 
